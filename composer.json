@@ -1,0 +1,21 @@
+{
+    "name": "digitech/yii2-generics",
+    "description": "YII2 Generics provides generic classes to reduce similar code duplication",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nwuguru Sunday",
+            "email": "sundayguru@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "digitech\\yiigenerics\\": ""
+        }
+    }
+}
