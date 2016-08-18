@@ -6,6 +6,8 @@
 *@property string $label the breadcrumb link label for controller index
 *@property boolean $showOperations used to determine the visibility of buttons for operation such as update, delete
 *@property string $homeAction the action name to use for controller index without the action prefix. default is index
+*@property string $prepend view name to render partial at the top of the detail view
+*@property string $append view name to render partial at the bottom of the detail view
 *@property array $detailColumns detail view attributes definition
 *@method boolean can($view) a method to validate access control for operation buttons 
 */

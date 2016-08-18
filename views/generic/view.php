@@ -26,7 +26,7 @@ if(isset($ctrl->detailColumns)){
 }
 ?>
 
-<div class="country-view">
+<div class="view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 <?php if(isset($ctrl->showOperations) && $ctrl->showOperations):
@@ -49,6 +49,8 @@ if(isset($ctrl->detailColumns)){
 
     </p>
 <?php endif; ?>
+<?php if(isset($ctrl->prepend)){ echo $ctrl->renderPartial($ctrl->prepend, ['model'=>$model]); } ?>
     <?= DetailView::widget($params) ?>
+<?php if(isset($ctrl->append)){ echo $ctrl->renderPartial($ctrl->append, ['model'=>$model]); } ?>
 
 </div>
