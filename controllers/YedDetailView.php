@@ -2,6 +2,7 @@
 
 /*
 *@property string $titleColumn the column name to use for the page title
+*@property string $primaryKey the primary key column name to use in operation buttons
 *@property string $label the breadcrumb link label for controller index
 *@property boolean $showOperations used to determine the visibility of buttons for operation such as update, delete
 *@property string $homeAction the action name to use for controller index without the action prefix. default is index

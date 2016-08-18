@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use \digitech\yiigenerics\YedUtil;
+
 $ctrl = $this->context;
 /* @var $this yii\web\View */
 /* @var $model app\models\Country */
@@ -27,13 +29,16 @@ if(isset($ctrl->detailColumns)){
 <div class="country-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
-<?php if(isset($ctrl->showOperations) && $ctrl->showOperations): ?>
+<?php if(isset($ctrl->showOperations) && $ctrl->showOperations):
+        if(!isset($ctrl->primaryKey)){ YedUtil::exception('To show operation buttons you need to add $primaryKey to your controller'); }
+        $primaryKey = $ctrl->primaryKey;
+ ?>
     <p>
     <?php if((method_exists($ctrl, 'can') && $ctrl->can('update')) || !method_exists($ctrl, 'can')): ?>
-        <?= Html::a('Update', ['update', 'id' => $model->code], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Update', ['update', 'id' => $model->$primaryKey], ['class' => 'btn btn-primary']) ?>
     <?php endif; ?>
     <?php if((method_exists($ctrl, 'can') && $ctrl->can('delete')) || !method_exists($ctrl, 'can')): ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->code], [
+        <?= Html::a('Delete', ['delete', 'id' => $model->$primaryKey], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
