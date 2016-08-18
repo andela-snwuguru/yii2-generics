@@ -5,7 +5,8 @@
 *@property string $label the breadcrumb link label for controller index
 *@property boolean $showOperations used to determine the visibility of buttons for operation such as update, delete
 *@property string $homeAction the action name to use for controller index without the action prefix. default is index
-*@property array $detailColumns detail view attributes definition 
+*@property array $detailColumns detail view attributes definition
+*@method boolean can($view) a method to validate access control for operation buttons 
 */
 
 namespace digitech\yiigenerics\controllers;

@@ -29,7 +29,10 @@ if(isset($ctrl->detailColumns)){
     <h1><?= Html::encode($this->title) ?></h1>
 <?php if(isset($ctrl->showOperations) && $ctrl->showOperations): ?>
     <p>
+    <?php if((method_exists($ctrl, 'can') && $ctrl->can('update')) || !method_exists($ctrl, 'can')): ?>
         <?= Html::a('Update', ['update', 'id' => $model->code], ['class' => 'btn btn-primary']) ?>
+    <?php endif; ?>
+    <?php if((method_exists($ctrl, 'can') && $ctrl->can('delete')) || !method_exists($ctrl, 'can')): ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->code], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -37,6 +40,8 @@ if(isset($ctrl->detailColumns)){
                 'method' => 'post',
             ],
         ]) ?>
+    <?php endif; ?>
+
     </p>
 <?php endif; ?>
     <?= DetailView::widget($params) ?>

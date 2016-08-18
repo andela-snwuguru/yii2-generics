@@ -1,13 +1,34 @@
 <?php
 
+/*
+*@property string $modelName the full alias to the model name (app\models\ModelName)
+*/
+
 namespace digitech\yiigenerics\controllers;
 
 use yii\web\NotFoundHttpException;
 use \digitech\yiigenerics\YedUtil;
+use yii\filters\VerbFilter;
 
 
 trait YedController
 {
+
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+        ];
+    }
+
     /**
      * Finds the model based on its primary key value.
      * If the modelName is not defined, a 404 HTTP exception will be thrown.
