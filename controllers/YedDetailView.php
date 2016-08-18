@@ -1,10 +1,11 @@
 <?php
 
-namespace digitech\yiigenerics;
+namespace digitech\yiigenerics\controllers;
 
 
 trait YedDetailView
 {
+    use \digitech\yiigenerics\controllers\YedController;
     /**
     * Displays a single Country model.
     * @param string $id
