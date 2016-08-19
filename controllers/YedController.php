@@ -43,10 +43,18 @@ trait YedController
     /**
     * A method to manipluate or validate loaded model before it is sent to detail view
     * You can also use this method to set $prepend and $append attribute for detail view
-    * This method is called immediately after model is loaded
-    *@param string $model the loaded model
+    * This function is called immediately after model is loaded
+    *@param string $model reference of the loaded model, any change to this model will affect the model passed to the detail view
     */
     public function beforeDetailRender(&$model){
+        
+    }
+
+    /**
+    * You can use this method to set $prepend and $append attribute for list view
+    * This function is called before the controller render
+    */
+    public function beforeListRender(){
         
     }
 

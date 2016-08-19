@@ -59,7 +59,7 @@ trait YedListView
         $dataProvider = new ActiveDataProvider([
             'query' => $modelName::find(),
         ]);
-
+        $this->beforeListRender();
         return $this->render($view, [
             'dataProvider' => $dataProvider,
         ]);
