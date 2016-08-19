@@ -5,7 +5,6 @@ namespace digitech\yiigenerics\controllers;
 
 trait YedDetailView
 {
-    use \digitech\yiigenerics\controllers\YedController;
 
     /**
     * @var string $titleColumn the column name to use for the page title

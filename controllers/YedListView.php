@@ -5,7 +5,6 @@ use yii\data\ActiveDataProvider;
 
 trait YedListView
 {
-    use \digitech\yiigenerics\controllers\YedController;
 
     /**
     * @var string $label the breadcrumb link label for controller index
