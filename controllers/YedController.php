@@ -1,9 +1,5 @@
 <?php
 
-/*
-*@property string $modelName the full alias to the model name (app\models\ModelName)
-*/
-
 namespace digitech\yiigenerics\controllers;
 
 use yii\web\NotFoundHttpException;
@@ -13,6 +9,11 @@ use yii\filters\VerbFilter;
 
 trait YedController
 {
+
+    /**
+    *@var string $modelName the full alias to the model name (app\models\ModelName)
+    */
+    # $modelName = 'ModelName';
 
     /**
      * @inheritdoc
@@ -50,6 +51,16 @@ trait YedController
     }
 
     /**
+    * Check is $modelName is defined in the controller
+    * @throws NotFoundHttpException if the modelName is not defined
+    */
+    public function validateModelName(){
+        if(!isset($this->modelName)){
+            YedUtil::exception('You need to set $modelName in the controller');
+        }
+    }
+
+    /**
      * Finds the model based on its primary key value.
      * If the modelName is not defined, a 404 HTTP exception will be thrown.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -60,10 +71,7 @@ trait YedController
      */
     public function findModel($id)
     {
-        if(!isset($this->modelName)){
-            YedUtil::exception('You need to set $modelName in the controller');
-        }
-
+        $this->validateModelName();
         $modelName = $this->modelName;
         if (($model = $modelName::findOne($id)) !== null) {
             return $model;
