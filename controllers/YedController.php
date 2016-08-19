@@ -59,6 +59,15 @@ trait YedController
     }
 
     /**
+    * You can use this method to perform validations before model deletion
+    * This function is called before the model is deleted
+    * @param string $model the loaded model to be deleted
+    */
+    public function beforeDelete($model){
+        
+    }
+
+    /**
     * Check is $modelName is defined in the controller
     * @throws NotFoundHttpException if the modelName is not defined
     */
