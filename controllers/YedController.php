@@ -30,6 +30,26 @@ trait YedController
     }
 
     /**
+    * A method to validate access control for operation buttons
+    * Override this method to implement your access control 
+    *@param string $view the action name without the action prefix
+    *@return boolean 
+    */
+    public function can($view){
+        return true;
+    }
+
+    /**
+    * A method to manipluate or validate loaded model before it is sent to detail view
+    * You can also use this method to set $prepend and $append attribute for detail view
+    * This method is called immediately after model is loaded
+    *@param string $model the loaded model
+    */
+    public function beforeDetailRender(&$model){
+        
+    }
+
+    /**
      * Finds the model based on its primary key value.
      * If the modelName is not defined, a 404 HTTP exception will be thrown.
      * If the model is not found, a 404 HTTP exception will be thrown.
