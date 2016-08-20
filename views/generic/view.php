@@ -30,8 +30,7 @@ if(isset($ctrl->detailColumns)){
 
     <h1><?= Html::encode($this->title) ?></h1>
 <?php if(isset($ctrl->showOperations) && $ctrl->showOperations):
-        if(!isset($ctrl->primaryKey)){ YedUtil::exception('To show operation buttons you need to add $primaryKey to your controller'); }
-        $primaryKey = $ctrl->primaryKey;
+        $primaryKey = isset($ctrl->primaryKey) ? $ctrl->primaryKey : 'id';
  ?>
     <p>
     <?php if((method_exists($ctrl, 'can') && $ctrl->can('update')) || !method_exists($ctrl, 'can')): ?>

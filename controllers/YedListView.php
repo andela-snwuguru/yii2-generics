@@ -11,6 +11,10 @@ trait YedListView
     */
     # public $label = '';
     /**
+    *@var string $modelName the full alias to the model name (app\models\ModelName)
+    */
+    # $modelName = 'ModelName';
+    /**
     * @var boolean $showOperations used to determine the visibility of buttons for operation such as update, delete
     */
     # public $showOperations = false;

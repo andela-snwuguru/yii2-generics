@@ -11,9 +11,13 @@ trait YedDetailView
     */
     # public $titleColumn = '';
     /**
-    * @var string $primaryKey the primary key column name to use in operation buttons
+    *@var string $modelName the full alias to the model name (app\models\ModelName)
     */
-    # public $primaryKey = '';
+    # $modelName = 'ModelName';
+    /**
+    * @var string $primaryKey the primary key column name of the model
+    */
+    # public $primaryKey = 'id';
     /**
     * @var string $label the breadcrumb link label for controller index
     */
@@ -37,9 +41,10 @@ trait YedDetailView
     */
     # public $append = '';
     /**
-    * @var string $detailViewAlias view name to render
+    * @var string $detailViewAlias template name to render for detail view
+    * Generic template will be used if not defined
     */
-    # public $detailViewAlias = '';
+    # public $detailViewAlias = '@vendor/digitech/yii2-generics/views/generic/view';
     /**
     * @var array $detailColumns detail view attributes definition
     */
