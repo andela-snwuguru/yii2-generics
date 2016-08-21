@@ -31,12 +31,12 @@ trait YedDetailView
     */
     # public $homeAction = 'index';
     /**
-    * @var string $prepend view name to render partial at the top of the detail view
+    * @var string $prepend view name to render partial at the top of the view template
     * The loaded model is available in the view as $model
     */
     # public $prepend = '';
     /**
-    * @var string $append view name to render partial at the bottom of the detail view
+    * @var string $append view name to render partial at the bottom of the view template
     * The loaded model is available in the view as $model
     */
     # public $append = '';
@@ -62,7 +62,8 @@ trait YedDetailView
             $view = $this->detailViewAlias;
         }
         $model =  $this->findModel($id);
-        $this->beforeDetailRender($model);
+        if(method_exists($this, 'beforeDetailRender'))
+            $this->beforeDetailRender($model);
         return $this->render($view, [
             'model' => $model,
         ]);

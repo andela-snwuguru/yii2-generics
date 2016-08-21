@@ -11,7 +11,7 @@ trait YedController
 {
 
     /**
-    *@var string $modelName the full alias to the model name (app\models\ModelName)
+    * @var string $modelName the full alias to the model name (app\models\ModelName)
     */
     # $modelName = 'ModelName';
 
@@ -33,8 +33,8 @@ trait YedController
     /**
     * A method to validate access control for operation buttons
     * Override this method to implement your access control 
-    *@param string $view the action name without the action prefix
-    *@return boolean 
+    * @param string $view the action name without the action prefix
+    * @return boolean 
     */
     public function can($view){
         return true;
@@ -44,9 +44,19 @@ trait YedController
     * A method to manipluate or validate loaded model before it is sent to detail view
     * You can also use this method to set $prepend and $append attribute for detail view
     * This function is called immediately after model is loaded
-    *@param string $model reference of the loaded model, any change to this model will affect the model passed to the detail view
+    * @param string $model reference of the loaded model, any change to this model will affect the model passed to the detail view
     */
     public function beforeDetailRender(&$model){
+        
+    }
+
+    /**
+    * A method to manipluate or validate loaded model before it is sent to form view
+    * You can also use this method to set $prepend and $append attribute for form view
+    * This function is called immediately after model is instantiated
+    * @param string $model reference of the loaded model, any change to this model will affect the model passed to the detail view
+    */
+    public function beforeFormRender(&$model){
         
     }
 

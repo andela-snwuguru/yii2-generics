@@ -39,7 +39,17 @@ trait YedCreateView
     * Generic template will be used if not defined
     */
     # public $formAlias = '@vendor/digitech/yii2-generics/views/generic/_form';
-    
+    /**
+    * @var string $prepend view name to render partial at the top of the view template
+    * The loaded model is available in the view as $model
+    */
+    # public $prepend = '';
+    /**
+    * @var string $append view name to render partial at the bottom of the view template
+    * The loaded model is available in the view as $model
+    */
+    # public $append = '';
+
     /**
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the $redirectAction if defined or 'view' page.
@@ -55,6 +65,8 @@ trait YedCreateView
         $modelName = $this->modelName;
         $model = new $modelName();
         $primaryKey = isset($this->primaryKey) ? $this->primaryKey : 'id';
+        if(method_exists($this, 'beforeFormRender'))
+            $this->beforeFormRender($model);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect([isset($this->redirectAction) ? $this->redirectAction : 'view', 'id' => $model->$primaryKey]);
         } else {

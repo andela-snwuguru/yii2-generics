@@ -18,7 +18,8 @@ trait YedDeleteView
     public function actionDelete($id)
     {
         $model = $this->findModel($id);
-        $this->beforeDelete($model);
+        if(method_exists($this, 'beforeDelete'))
+            $this->beforeDelete($model);
         $model->delete();
         return $this->redirect([isset($this->homeAction) ? $this->homeAction : 'index']);
     }

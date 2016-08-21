@@ -62,7 +62,8 @@ trait YedListView
         $dataProvider = new ActiveDataProvider([
             'query' => $modelName::find(),
         ]);
-        $this->beforeListRender();
+        if(method_exists($this, 'beforeListRender'))
+            $this->beforeListRender();
         return $this->render($view, [
             'dataProvider' => $dataProvider,
         ]);
