@@ -1,6 +1,6 @@
 YII2 Generics
 =============
-YII2 Generics provides generic classes to reduce similar code duplication
+YII2 Generics provides generic controller actions and view templates for CRUD operations as traits to reduce similar code duplication
 
 Installation
 ------------

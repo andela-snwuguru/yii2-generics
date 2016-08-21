@@ -21,10 +21,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 <?php if(isset($ctrl->prepend)){ echo $ctrl->renderPartial($ctrl->prepend, ['model'=>$model]); } ?>
-    <?= $this->render(isset($ctrl->formAlias) ? $ctrl->formAlias : '@vendor/digitech/yii2-generics/views/generic/_form', [
+    <?= $ctrl->renderPartial(isset($ctrl->formAlias) ? $ctrl->formAlias : '@vendor/digitech/yii2-generics/views/generic/_form', [
         'model' => $model,
     ]) ?>
 <?php if(isset($ctrl->append)){ echo $ctrl->renderPartial($ctrl->append, ['model'=>$model]); } ?>
-    
-
 </div>
