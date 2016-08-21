@@ -6,7 +6,7 @@ use \digitech\yiigenerics\YedUtil;
 
 $ctrl = $this->context;
 /* @var $this yii\web\View */
-/* @var $model app\models\Country */
+/* @var $model app\models\ModelName */
 if(isset($ctrl->titleColumn)){
     $column = $ctrl->titleColumn;
     $this->title = $model->$column;

@@ -35,10 +35,28 @@ trait YedCreateView
     */
     # public $createTitle = 'Add New';
     /**
+    * @var string $createButtonLabel label to display on create button in form template
+    */
+    # public $createButtonLabel = 'Create';
+    /**
+    * @var string $buttonClass css class to apply to form submit button
+    */
+    # public $buttonClass = '';
+    /**
     * @var string $formAlias template name to render form elements
     * Generic template will be used if not defined
     */
     # public $formAlias = '@vendor/digitech/yii2-generics/views/generic/_form';
+    /**
+    * @var string $formFields definition of form elements to be rendered
+    * Generic template will be used if not defined
+    * type: form input type to generate e.g textInput, passwordInput and all available input types in YII active form.
+    * params: options to be passed into the input type
+    */
+    /* public $formFields = [
+        'columnName1' => ['params'=>['maxlength'=>true], 'type'=>'textInput'],
+        'columnName2' => [], # use default parameters
+    ];*/
     /**
     * @var string $prepend view name to render partial at the top of the view template
     * The loaded model is available in the view as $model

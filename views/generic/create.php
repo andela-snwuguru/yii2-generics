@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 $ctrl = $this->context;
 /* @var $this yii\web\View */
-/* @var $model app\models\Country */
+/* @var $model app\models\ModelName */
 
 $this->title = isset($ctrl->createTitle) ? $ctrl->createTitle : 'Add New';
 

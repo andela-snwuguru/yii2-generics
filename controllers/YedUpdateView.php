@@ -31,6 +31,14 @@ trait YedUpdateView
     */
     # public $updateTitle = 'Update Item';
     /**
+    * @var string $updateButtonLabel label to display on update button in form template
+    */
+    # public $updateButtonLabel = 'Update';
+    /**
+    * @var string $buttonClass css class to apply to form submit button
+    */
+    # public $buttonClass = '';
+    /**
     * @var string $formAlias template name to render form elements
     * Generic template will be used if not defined
     */
