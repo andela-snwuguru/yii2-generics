@@ -20,11 +20,19 @@ $buttonClass = isset($ctrl->buttonClass) ? $ctrl->buttonClass : '';
     YedUtil::exception('$formFields not defined in controller');
   } 
 
+  if(isset($ctrl->formPrepend)){
+    $ctrl->renderPartial($ctrl->formPrepend, ['model' => $model]);
+  }
+  
   foreach ($ctrl->formFields as $key => $value) {
     $column = $key;
     $params = isset($value['params']) ? $value['params'] : [];
     $fieldType = isset($value['type']) ? $value['type'] : 'textInput';
     echo $form->field($model, $column)->$fieldType($params);
+  }
+
+  if(isset($ctrl->formAppend)){
+    $ctrl->renderPartial($ctrl->formAppend, ['model' => $model]);
   }
   ?>
     <div class="form-group">

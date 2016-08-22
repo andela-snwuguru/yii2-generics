@@ -53,6 +53,17 @@ trait YedUpdateView
     * The loaded model is available in the view as $model
     */
     # public $append = '';
+    /**
+    * @var string $formPrepend view name to render partial at the top of the form template
+    * The loaded model is available in the view as $model
+    */
+    # public $formPrepend = '';
+    /**
+    * @var string $formAppend view name to render partial at the bottom of the form template
+    * The loaded model is available in the view as $model
+    */
+    # public $formAppend = '';
+
 
     /**
      * Updates an existing Country model.
